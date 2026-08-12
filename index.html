@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Selvaganapathy Textiles</title>
+  <meta name="description"
+    content="Premium cotton textile manufacturer in Tamil Nadu. Wholesale towels, bedsheets, handkerchiefs & more. Direct manufacturing, competitive pricing.">
+  <!-- Tailwind via CDN + custom style -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fbf8f3;
+      color: #1e2a2f;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .bg-cream {
+      background-color: #fbf8f3;
+    }
+
+    .bg-navy {
+      background-color: #1e2a2f;
+    }
+
+    .text-navy {
+      color: #1e2a2f;
+    }
+
+    .border-gold {
+      border-color: #c9a96e;
+    }
+
+    .text-gold {
+      color: #c9a96e;
+    }
+
+    .shadow-premium {
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 4px 18px rgba(0, 0, 0, 0.02);
+    }
+
+    .card-premium {
+      background: white;
+      border-radius: 2rem;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.02);
+      backdrop-filter: blur(2px);
+      transition: all 0.3s ease;
+    }
+
+    .card-premium:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 48px -16px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      border-radius: 9999px;
+      padding: 0.6rem 1.8rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ebe5c;
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-outline-gold {
+      border: 1.5px solid #c9a96e;
+      color: #c9a96e;
+      background: transparent;
+      border-radius: 9999px;
+      padding: 0.6rem 2rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .btn-outline-gold:hover {
+      background: #c9a96e;
+      color: white;
+      box-shadow: 0 8px 24px rgba(201, 169, 110, 0.25);
+    }
+
+    .bg-thread-pattern {
+      background-image: radial-gradient(circle at 20% 30%, rgba(201, 169, 110, 0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .floating-wa {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 100;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
+      transition: all 0.2s;
+    }
+
+    .floating-wa:hover {
+      transform: scale(1.08);
+      background: #1ebe5c;
+    }
+
+    .loading-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: #fbf8f3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s;
+    }
+
+    .loading-screen.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loader-thread {
+      width: 60px;
+      height: 60px;
+      border: 3px solid #e8dfd0;
+      border-top-color: #c9a96e;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: all 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .img-soft {
+      transition: all 0.5s ease;
+    }
+
+    .img-soft:hover {
+      filter: brightness(1.02) contrast(1.02);
+    }
+
+    .skeleton {
+      background: #eae3d8;
+      border-radius: 12px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.6;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.6;
+      }
+    }
+
+    .nav-blur {
+      backdrop-filter: blur(12px);
+      background: rgba(251, 248, 243, 0.8);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+    }
+
+    .hero-bg {
+      background: linear-gradient(145deg, #f3ede6 0%, #fbf8f3 100%);
+    }
+
+    .text-balance {
+      text-wrap: balance;
+    }
+
+    .team-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 9999px;
+      object-fit: cover;
+      border: 3px solid #c9a96e;
+      padding: 4px;
+      background: white;
+    }
+
+    .product-tag {
+      background: #f3ede6;
+      color: #1e2a2f;
+      border-radius: 40px;
+      padding: 0.2rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 640px) {
+      .team-img {
+        width: 72px;
+        height: 72px;
+      }
+
+      .floating-wa {
+        width: 52px;
+        height: 52px;
+        font-size: 24px;
+        bottom: 18px;
+        right: 18px;
+      }
+    }
+
+    /* scroll margin for sticky nav */
+    section {
+      scroll-margin-top: 90px;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        scroll-margin-top: 400px;
+      }
+
+      /* FIX: Mobile scroll padding to account for sticky navbar */
+      html {
+        scroll-padding-top: 80px;
+      }
+    }
+
+    /* nav link underline animation */
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #c9a96e;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* mobile menu link animation */
+    .mobile-link {
+      transition: all 0.2s ease;
+      transform-origin: left;
+    }
+
+    .mobile-link:hover {
+      color: #c9a96e;
+      transform: translateX(6px);
+    }
+
+    /* intro step animations */
+    .intro-welcome {
+      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .intro-welcome.exit {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.96);
+      filter: blur(4px);
+    }
+
+    .intro-sub.exit {
+      opacity: 0;
+      transform: translateY(-10px);
+      filter: blur(2px);
+    }
+
+    .intro-fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .intro-fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .intro-fade-up.delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .intro-fade-up.delay-2 {
+      transition-delay: 0.3s;
+    }
+
+    /* nikill image animation */
+    .nikill-img-wrap {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .nikill-img-wrap.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* main site entrance */
+    .main-enter {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .main-enter.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* mobile menu close button */
+    .menu-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 24px;
+      color: #1e2a2f;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      z-index: 60;
+    }
+
+    .menu-close-btn:hover {
+      transform: rotate(90deg);
+    }
+
+    /* mobile menu slide animation */
+    #mobileMenu {
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
+      transform-origin: top center;
+      transform: scaleY(0) translateY(-10px);
+      opacity: 0;
+      display: block !important;
+      padding-top: 48px;
+      max-height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+
+    #mobileMenu.open {
+      transform: scaleY(1) translateY(0);
+      opacity: 1;
+      visibility: visible;
+      max-height: 600px;
+      overflow: visible;
+    }
+
+    #mobileMenu.hidden-menu {
+      display: block !important;
+      transform: scaleY(0) translateY(-10px);
+      opacity: 0;
+      visibility: hidden;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    #mobileMenu.open a {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    #mobileMenu a {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+
+    #mobileMenu.open a {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    #mobileMenu.open a:nth-child(1) {
+      transition-delay: 0.05s;
+    }
+
+    #mobileMenu.open a:nth-child(2) {
+      transition-delay: 0.10s;
+    }
+
+    #mobileMenu.open a:nth-child(3) {
+      transition-delay: 0.15s;
+    }
+
+    #mobileMenu.open a:nth-child(4) {
+      transition-delay: 0.20s;
+    }
+
+    #mobileMenu.open a:nth-child(5) {
+      transition-delay: 0.25s;
+    }
+
+    #mobileMenu.open a:nth-child(6) {
+      transition-delay: 0.30s;
+    }
+
+    #mobileMenu.open a:nth-child(7) {
+      transition-delay: 0.35s;
+    }
+
+    #mobileMenu.open a:nth-child(8) {
+      transition-delay: 0.40s;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- LOADING SCREEN (two-step intro with cinematic transition) -->
+  <div id="loadingScreen" class="loading-screen">
+    <!-- Welcome step -->
+    <div id="introStep1" class="flex flex-col items-center justify-center text-center px-6">
+      <div class="loader-thread mb-6 intro-welcome"></div>
+      <h1 id="welcomeTitle" class="text-4xl md:text-5xl font-playfair text-navy tracking-wide intro-welcome">Welcome to
+        <br><span class="text-gold">Sri Selvaganapathy</span> Textiles
+      </h1>
+      <p id="welcomeSub" class="text-navy/60 mt-3 text-sm uppercase tracking-widest intro-welcome">Premium cotton ·
+        manufacturing · wholesale</p>
+    </div>
+
+    <!-- Developer step (hidden initially) with Nikill image -->
+    <div id="introStep2" class="hidden flex flex-col items-center justify-center text-center px-6 py-3">
+      <div id="nikillImage"
+        class="nikill-img-wrap relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-gold/30 shadow-xl mb-3 bg-[#e8dfd0] flex items-center justify-center flex-shrink-0">
+        <img src="nikil.jpeg" alt="Nikill Kamaraj" class="w-full h-full object-cover">
+      </div>
+      <p id="devName" class="text-base md:text-lg font-medium text-navy intro-fade-up">Developed by <span
+          class="font-semibold">Nikill Kamaraj</span></p>
+      <p id="devTitle" class="text-navy/70 text-xs md:text-sm mt-0.5 intro-fade-up delay-1">Assistant Manager — Sri
+        Selvaganapathy Textiles</p>
+      <div class="mt-2 w-12 h-0.5 bg-gold/40 intro-fade-up delay-2"></div>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/918270751875" class="floating-wa" target="_blank" aria-label="WhatsApp"><i
+      class="fab fa-whatsapp"></i></a>
+
+  <!-- MAIN WEBSITE -->
+  <div id="mainSite" class="hidden main-enter">
+
+    <!-- NAVBAR (sticky, glass) -->
+    <header class="sticky top-0 z-50 nav-blur">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl font-playfair font-bold tracking-tight text-navy">Sri Selvaganapathy <span
+              class="text-gold">Textiles</span></span>
+        </div>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-navy/80">
+          <a href="#home" class="nav-link transition">Home</a>
+          <a href="#about" class="nav-link transition">About</a>
+          <a href="#products" class="nav-link transition">Products</a>
+          <a href="#manufacturing" class="nav-link transition">Manufacturing</a>
+          <a href="#quality" class="nav-link transition">Quality</a>
+          <a href="#team" class="nav-link transition">Team</a>
+          <a href="#contact" class="nav-link transition">Contact</a>
+          <a href="https://wa.me/918270751875" class="btn-whatsapp text-sm px-5 py-2"><i
+              class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+        </nav>
+        <!-- Mobile hamburger -->
+        <button id="menuBtn" class="md:hidden text-2xl text-navy focus:outline-none"><i
+            class="fas fa-bars"></i></button>
+      </div>
+      <!-- Mobile menu with close button and animation -->
+      <div id="mobileMenu"
+        class="md:hidden hidden-menu bg-white/90 backdrop-blur-md px-4 pb-6 pt-12 border-b border-gold/10 relative">
+        <button id="closeMenuBtn" class="menu-close-btn" aria-label="Close menu"><i class="fas fa-times"></i></button>
+        <a href="#home" class="mobile-link block py-3 text-navy/80 border-b border-gold/5">Home</a>
+        <a href="#about" class="mobile-link block py-3 text-navy/80 border-b border-gold/5">About</a>
+        <a href="#products" class="mobile-link block py-3 text-navy/80 border-b border-gold/5">Products</a>
+        <a href="#manufacturing" class="mobile-link block py-3 text-navy/80 border-b border-gold/5">Manufacturing</a>
+        <a href="#quality" class="mobile-link block py-3 text-navy/80 border-b border-gold/5">Quality</a>
+        <a href="#team" class="mobile-link block py-3 text-navy/80 border-b border-gold/5">Team</a>
+        <a href="#contact" class="mobile-link block py-3 text-navy/80">Contact</a>
+        <a href="https://wa.me/918270751875" class="btn-whatsapp block text-center mt-4"><i
+            class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+      </div>
+    </header>
+
+    <!-- HERO - Reduced height -->
+    <section id="home" class="hero-bg pt-6 pb-10 md:pt-10 md:pb-14 relative overflow-hidden">
+      <div class="absolute inset-0 bg-thread-pattern opacity-30 pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 gap-6 items-center">
+        <div class="space-y-4 text-center md:text-left">
+          <div
+            class="inline-block bg-white/60 backdrop-blur px-4 py-1 rounded-full text-xs font-medium text-navy/70 border border-gold/20">
+            <i class="fas fa-check-circle text-gold mr-2"></i> Tamil Nadu based manufacturer
+          </div>
+          <h1 class="text-3xl md:text-5xl font-playfair leading-tight text-navy">Premium Cotton Textiles, <span
+              class="text-gold">Manufactured</span> with Quality.</h1>
+          <p class="text-navy/70 text-base max-w-lg">Sri Selvaganapathy Textiles is a trusted textile manufacturing
+            company delivering premium-quality cotton products at competitive wholesale prices.</p>
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+            <a href="#products"
+              class="bg-navy text-white px-6 py-2.5 rounded-full font-medium hover:bg-navy/80 transition shadow-lg text-sm">Explore
+              Products</a>
+            <a href="https://wa.me/918270751875" class="btn-whatsapp px-6 py-2.5 text-sm"><i
+                class="fab fa-whatsapp mr-2"></i>Contact on
+              WhatsApp</a>
+          </div>
+          <div class="flex flex-wrap gap-5 pt-2 text-sm text-navy/60 justify-center md:justify-start">
+            <span><i class="fas fa-check-circle text-gold mr-2"></i>Premium Cotton</span>
+            <span><i class="fas fa-check-circle text-gold mr-2"></i>Wholesale Manufacturing</span>
+            <span><i class="fas fa-check-circle text-gold mr-2"></i>Competitive Pricing</span>
+          </div>
+        </div>
+        <div class="relative flex justify-center">
+          <div
+            class="aspect-[4/3] w-full max-w-md bg-[#e8dfd0] rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center text-navy/30 text-lg border border-white/30">
+            <img src="towel.jpeg" alt="Textile manufacturing" class="w-full h-full object-cover img-soft"
+              loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 bg-white/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-1 gap-8 items-center">
+        <div class="reveal text-center md:text-left max-w-3xl mx-auto">
+          <span class="text-gold text-sm font-semibold tracking-widest">ABOUT US</span>
+          <h2 class="text-4xl md:text-5xl font-playfair mt-2 text-navy">Built on Quality. <br>Driven by Trust.</h2>
+          <p class="text-navy/70 mt-6 text-lg leading-relaxed">Sri Selvaganapathy Textiles is a textile manufacturing
+            company specializing in the production of quality cotton textile products for wholesale customers. We focus
+            on premium materials, consistent quality, and reliable bulk production.</p>
+          <ul class="mt-6 space-y-2 text-navy/80 flex flex-wrap gap-x-6">
+            <li><i class="fas fa-check text-gold mr-3"></i>Premium cotton materials</li>
+            <li><i class="fas fa-check text-gold mr-3"></i>Consistent manufacturing quality</li>
+            <li><i class="fas fa-check text-gold mr-3"></i>Competitive wholesale pricing</li>
+            <li><i class="fas fa-check text-gold mr-3"></i>Reliable bulk production</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER -->
+    <section id="founder" class="py-20 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+        <div class="flex justify-center reveal">
+          <div class="relative w-64 h-64 rounded-full border-4 border-gold/30 p-2 bg-white shadow-xl">
+            <img src="shanker.png" alt="Founder" class="w-full h-full rounded-full object-cover">
+            <div class="absolute -bottom-2 -right-2 bg-gold text-white text-xs px-4 py-1 rounded-full">Vision</div>
+          </div>
+        </div>
+        <div class="reveal">
+          <span class="text-gold text-sm font-semibold tracking-widest">OUR FOUNDER</span>
+          <h2 class="text-4xl font-playfair mt-2 text-navy">A Legacy of Quality &amp; Trust</h2>
+          <p class="text-navy/70 mt-4 text-lg leading-relaxed">With decades of experience in the textile industry, our
+            founder built this company on the principles of integrity, quality, and customer focus. A commitment to
+            manufacturing excellence and strong relationships with wholesale partners.</p>
+          <div class="mt-6 flex gap-6 text-sm text-navy/60"><span><i
+                class="fas fa-eye text-gold mr-2"></i>Visionary</span><span><i
+                class="fas fa-handshake text-gold mr-2"></i>Trusted partner</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="py-20 bg-white/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="text-gold text-sm font-semibold tracking-widest">TEAM</span>
+        <h2 class="text-4xl md:text-5xl font-playfair mt-2 text-navy">Management</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div class="card-premium p-6 reveal">
+            <div class="flex flex-col items-center">
+              <div class="relative w-48 h-48 rounded-full border-4 border-gold/30 p-2 bg-white shadow-xl">
+                <img src="shanker.png" alt="Founder" class="w-full h-full rounded-full object-cover">
+              </div>
+              <h4 class="text-xl font-semibold mt-4">Shanker</h4>
+              <p class="text-navy/60 text-sm">Visionary leader</p>
+              <p class="text-navy/70 text-sm mt-2">Building a legacy of quality textile manufacturing.</p>
+            </div>
+          </div>
+          <div class="card-premium p-6 reveal">
+            <div class="flex flex-col items-center">
+              <div class="relative w-48 h-48 rounded-full border-4 border-gold/30 p-2 bg-white shadow-xl">
+                <img src="ramesh.jpeg" alt="Manager" class="w-full h-full rounded-full object-cover">
+              </div>
+              <h4 class="text-xl font-semibold mt-4">Ramesh</h4>
+              <p class="text-navy/60 text-sm">Manager</p>
+              <p class="text-navy/70 text-sm mt-2">Ensuring efficient production and quality control.</p>
+            </div>
+          </div>
+          <div class="card-premium p-6 reveal">
+            <div class="flex flex-col items-center">
+              <div class="relative w-48 h-48 rounded-full border-4 border-gold/30 p-2 bg-white shadow-xl">
+                <img src="nikil.jpeg" alt="Nikill Kamaraj" class="w-full h-full rounded-full object-cover">
+              </div>
+              <h4 class="text-xl font-semibold mt-4">Nikill Kamaraj</h4>
+              <p class="text-navy/60 text-sm">Assistant Manager</p>
+              <p class="text-navy/70 text-sm mt-2">Driving operational excellence and customer relations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="py-20 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center"><span class="text-gold text-sm font-semibold tracking-widest">CATALOG</span>
+          <h2 class="text-4xl md:text-5xl font-playfair mt-2 text-navy">Our Products</h2>
+          <p class="text-navy/60 max-w-xl mx-auto mt-2">Manufactured with premium cotton and consistent quality.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <div class="card-premium p-5 reveal">
+            <h4 class="text-xl font-semibold mt-2">Towels</h4>
+            <div class="flex flex-wrap gap-2 mt-2"><span class="product-tag">12×14"</span><span
+                class="product-tag">27×54"</span><span class="product-tag">30×60"</span><span
+                class="product-tag">32×64"</span><span class="product-tag">35×70"</span></div>
+            <p class="text-navy/60 text-sm mt-2">Premium cotton, soft &amp; durable. Neat finishing, available in
+              multiple sizes. Ideal for wholesale and bulk requirements.</p>
+          </div>
+          <div class="card-premium p-5 reveal">
+            <h4 class="text-xl font-semibold mt-2">Handkerchief</h4>
+            <p class="text-navy/60 text-sm mt-1">100% cotton, fine finish. Comfortable and durable fabric, suitable for
+              everyday use. Consistent quality.</p>
+          </div>
+          <div class="card-premium p-5 reveal">
+            <h4 class="text-xl font-semibold mt-2">Bedsheet</h4>
+            <p class="text-navy/60 text-sm mt-1">Premium cotton, various sizes. Neat finishing and strong fabric.
+              Manufactured with consistent quality for wholesale buyers.</p>
+          </div>
+          <div class="card-premium p-5 reveal">
+            <h4 class="text-xl font-semibold mt-2">Skirt</h4>
+            <p class="text-navy/60 text-sm mt-1">Quality cotton fabric, comfortable and durable. Available in multiple
+              sizes. Suitable for bulk orders.</p>
+          </div>
+          <div class="card-premium p-5 reveal">
+            <h4 class="text-xl font-semibold mt-2">Baby Towel</h4>
+            <p class="text-navy/60 text-sm mt-1">Extra soft, gentle on skin. Premium cotton with fine finishing.
+              Reliable quality for wholesale supply.</p>
+          </div>
+          <div class="card-premium p-5 reveal">
+            <h4 class="text-xl font-semibold mt-2">Lunch Towel</h4>
+            <p class="text-navy/60 text-sm mt-1">Durable and absorbent. Made from premium cotton with neat finishing.
+              Consistent quality for bulk orders.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANUFACTURING -->
+    <section id="manufacturing" class="py-20 bg-white/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="text-gold text-sm font-semibold tracking-widest">PROCESS</span>
+        <h2 class="text-4xl md:text-5xl font-playfair mt-2 text-navy">From Cotton to Quality</h2>
+        <div class="flex flex-wrap justify-center gap-4 mt-10 text-sm font-medium text-navy/80">
+          <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-gold/10">Raw Cotton</span>
+          <span class="text-gold text-xl">→</span>
+          <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-gold/10">Processing</span>
+          <span class="text-gold text-xl">→</span>
+          <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-gold/10">Weaving</span>
+          <span class="text-gold text-xl">→</span>
+          <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-gold/10">Cutting</span>
+          <span class="text-gold text-xl">→</span>
+          <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-gold/10">Stitching</span>
+          <span class="text-gold text-xl">→</span>
+          <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-gold/10">Quality Check</span>
+          <span class="text-gold text-xl">→</span>
+          <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-gold/10">Packaging</span>
+          <span class="text-gold text-xl">→</span>
+          <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-gold/10">Wholesale Dispatch</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUALITY -->
+    <section id="quality" class="py-20 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto text-center">
+        <div class="reveal">
+          <span class="text-gold text-sm font-semibold tracking-widest">QUALITY</span>
+          <h2 class="text-4xl font-playfair mt-2 text-navy">Premium Quality. Every Product.</h2>
+          <ul class="mt-6 space-y-3 text-navy/80 flex flex-wrap justify-center gap-x-8 gap-y-2">
+            <li><i class="fas fa-check-circle text-gold mr-3"></i>Premium Cotton</li>
+            <li><i class="fas fa-check-circle text-gold mr-3"></i>Strong &amp; Durable Fabric</li>
+            <li><i class="fas fa-check-circle text-gold mr-3"></i>Consistent Size</li>
+            <li><i class="fas fa-check-circle text-gold mr-3"></i>Fine Finishing</li>
+            <li><i class="fas fa-check-circle text-gold mr-3"></i>Quality Inspection</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="py-20 bg-white/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl font-playfair text-navy">Why Choose Us?</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+          <div class="card-premium p-6 reveal"><i class="fas fa-industry text-3xl text-gold"></i>
+            <h4 class="font-semibold mt-3">Direct Manufacturer</h4>
+          </div>
+          <div class="card-premium p-6 reveal"><i class="fas fa-leaf text-3xl text-gold"></i>
+            <h4 class="font-semibold mt-3">Premium Cotton</h4>
+          </div>
+          <div class="card-premium p-6 reveal"><i class="fas fa-tags text-3xl text-gold"></i>
+            <h4 class="font-semibold mt-3">Competitive Wholesale</h4>
+          </div>
+          <div class="card-premium p-6 reveal"><i class="fas fa-arrows-alt-h text-3xl text-gold"></i>
+            <h4 class="font-semibold mt-3">Multiple Sizes</h4>
+          </div>
+          <div class="card-premium p-6 reveal"><i class="fas fa-boxes text-3xl text-gold"></i>
+            <h4 class="font-semibold mt-3">Bulk Manufacturing</h4>
+          </div>
+          <div class="card-premium p-6 reveal"><i class="fas fa-check-double text-3xl text-gold"></i>
+            <h4 class="font-semibold mt-3">Consistent Quality</h4>
+          </div>
+          <div class="card-premium p-6 reveal"><i class="fas fa-truck text-3xl text-gold"></i>
+            <h4 class="font-semibold mt-3">Reliable Supply</h4>
+          </div>
+          <div class="card-premium p-6 reveal"><i class="fas fa-map-pin text-3xl text-gold"></i>
+            <h4 class="font-semibold mt-3">Tamil Nadu Based</h4>
+          </div>
+        </div>
+        <div class="mt-16 p-8 bg-navy rounded-3xl text-white max-w-3xl mx-auto">
+          <h3 class="text-2xl font-playfair">Manufacturing Quality at Wholesale Prices</h3>
+          <p class="text-white/70 mt-2">Direct manufacturing allows us to provide premium cotton products at competitive
+            wholesale prices.</p>
+          <a href="https://wa.me/918270751875" class="btn-whatsapp inline-block mt-4 px-8 py-3"><i
+              class="fab fa-whatsapp mr-2"></i>Get Wholesale
+            Price</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAMIL NADU PRESENCE -->
+    <section class="py-20 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl font-playfair text-navy">A Trusted Textile Manufacturing Partner in <span
+            class="text-gold">Tamil Nadu</span></h2>
+        <p class="text-navy/70 max-w-2xl mx-auto mt-4">We supply quality cotton products to businesses and bulk buyers
+          across the region. A major manufacturing company based in Tamil Nadu.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT + MAP -->
+    <section id="contact" class="py-20 bg-white/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12">
+        <div class="reveal">
+          <span class="text-gold text-sm font-semibold tracking-widest">CONTACT</span>
+          <h2 class="text-4xl font-playfair mt-2 text-navy">Get in Touch</h2>
+          <div class="mt-6 space-y-4 text-navy/80">
+            <p><i class="fas fa-map-pin text-gold w-6"></i> 3/135, East St, Gurusamipalayam, Pillanallur, Namakkal,
+              Tamil Nadu 637408</p>
+            <p><i class="fas fa-phone text-gold w-6"></i>82707 51875</p>
+            <p><i class="fab fa-whatsapp text-gold w-6"></i> 82707 51875</p>
+            <p><i class="fas fa-envelope text-gold w-6"></i> rajkutty2401@gmail.com</p>
+          </div>
+          <div class="flex gap-4 mt-6">
+            <a href="https://wa.me/918270751875" class="btn-whatsapp px-6 py-3"><i
+                class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+            <a href="tel:+918270751875" class="btn-outline-gold px-6 py-3">Call</a>
+          </div>
+        </div>
+        <div class="rounded-3xl overflow-hidden h-64 md:h-auto shadow-xl border border-white/30">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.123456789!2d78.1352258!3d11.4277469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babc3a77d68cf81%3A0xd0597f75214592e5!2sSSG%20textile%20gurusamipalayam!5e0!3m2!1sen!2sin!4v1690000000000"
+            width="100%" height="100%" style="border:0; min-height: 300px;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy text-white/70 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+        <div><span class="text-2xl font-playfair font-bold text-white">Sri Selvaganapathy <span
+              class="text-gold">Textiles</span></span>
+          <p class="mt-2 text-sm">Premium Cotton Textile Manufacturing &amp; Wholesale</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold">Quick Links</h4>
+          <ul class="mt-2 space-y-1 text-sm">
+            <li><a href="#home" class="hover:text-gold">Home</a></li>
+            <li><a href="#about" class="hover:text-gold">About</a></li>
+            <li><a href="#products" class="hover:text-gold">Products</a></li>
+            <li><a href="#contact" class="hover:text-gold">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold">Connect</h4>
+          <div class="flex gap-4 mt-2 text-xl"><a href="https://wa.me/918270751875" class="hover:text-gold"><i
+                class="fab fa-whatsapp"></i></a></div>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/10 mt-8 pt-6 text-center text-sm">&copy;
+        2026 Sri Selvaganapathy Textiles. All Rights Reserved.</div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const loadingScreen = document.getElementById('loadingScreen');
+      const step1 = document.getElementById('introStep1');
+      const step2 = document.getElementById('introStep2');
+      const mainSite = document.getElementById('mainSite');
+      const welcomeTitle = document.getElementById('welcomeTitle');
+      const welcomeSub = document.getElementById('welcomeSub');
+      const devName = document.getElementById('devName');
+      const devTitle = document.getElementById('devTitle');
+      const nikillImg = document.getElementById('nikillImage');
+
+      setTimeout(() => {
+        welcomeTitle.classList.add('exit');
+        welcomeSub.classList.add('exit');
+        document.querySelector('#introStep1 .loader-thread')?.classList.add('exit');
+
+        setTimeout(() => {
+          step1.classList.add('hidden');
+          step2.classList.remove('hidden');
+
+          requestAnimationFrame(() => {
+            nikillImg.classList.add('show');
+            setTimeout(() => {
+              devName.classList.add('show');
+              setTimeout(() => {
+                devTitle.classList.add('show');
+                const line = document.querySelector('#introStep2 .bg-gold/40');
+                if (line) setTimeout(() => line.classList.add('show'), 200);
+              }, 300);
+            }, 400);
+          });
+
+          setTimeout(() => {
+            loadingScreen.classList.add('fade-out');
+            mainSite.classList.remove('hidden');
+            setTimeout(() => {
+              mainSite.classList.add('show');
+              loadingScreen.style.display = 'none';
+              document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+            }, 600);
+          }, 6400);
+        }, 700);
+      }, 1800);
+    })();
+
+    // Mobile menu toggle with smooth animation
+    const menuBtn = document.getElementById('menuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function openMenu() {
+      mobileMenu.classList.remove('hidden-menu');
+      void mobileMenu.offsetWidth;
+      mobileMenu.classList.add('open');
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      setTimeout(() => {
+        if (!mobileMenu.classList.contains('open')) {
+          mobileMenu.classList.add('hidden-menu');
+        }
+      }, 400);
+    }
+
+    menuBtn.addEventListener('click', openMenu);
+    closeMenuBtn.addEventListener('click', closeMenu);
+
+    document.addEventListener('click', function (e) {
+      const header = document.querySelector('header');
+      if (!header.contains(e.target) && mobileMenu.classList.contains('open')) {
+        closeMenu();
+      }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+        if (mobileMenu.classList.contains('open')) {
+          closeMenu();
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+
+</html>
